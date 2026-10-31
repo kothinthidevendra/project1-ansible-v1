@@ -8,7 +8,7 @@
     img_id: ami-0055977a6e828a4f4
     domain_name: joindevops.store
   tasks:
-  - name: create ec2 instance
+  - name: setup ec2 instance
     amazon.aws.ec2_instance:
       name: roboshop-"{{ list }}"
       image_id: "{{ img_id }}"
