@@ -6,8 +6,8 @@
     domain_name: joindevops.store
     img_id: ami-0055977a6e828a4f4
     task: create
-    tasks:
-    - name: create ec2 instance
+  tasks:
+  - name: create ec2 instance
       amazon.aws.ec2_instance:
         name: roboshop-"{{ item }}"
         image_id: "{{ img_id }}"
@@ -17,5 +17,5 @@
         - roboshop-"{{ item }}"
         region: us-east-1
       
-      loop: "{{ instances }}"
-      when: task == "create"
+    loop: "{{ instances }}"
+    when: task == "create"
