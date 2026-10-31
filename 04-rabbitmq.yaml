@@ -21,12 +21,12 @@
       enabled: yes
 
   - name: 
-  community.rabbitmq.rabbitmq_user:
-    user: "roboshop"
-    password: "{{ rabbitmq_roboshop_password }}"
-    vhost: "/"
-    configure_priv: ".*"
-    write_priv: ".*"
-    read_priv: ".*"
-    tags: "management"
-    state: present
+    community.rabbitmq.rabbitmq_user:
+      user: "roboshop"
+      password: "{{ rabbitmq_roboshop_password }}"
+      vhost: "/"
+      configure_priv: ".*"
+      write_priv: ".*"
+      read_priv: ".*"
+      tags: "management"
+      state: present
