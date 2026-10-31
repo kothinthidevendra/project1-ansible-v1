@@ -1,0 +1,6 @@
+- name: configuration of catalogue server
+  hosts: catalogue
+  become: yes
+  tasks:
+  - name: enabling nodejs module
+    command: 
