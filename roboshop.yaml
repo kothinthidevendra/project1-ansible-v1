@@ -14,7 +14,7 @@
       image_id: "{{ img_id }}"
       security_groups:
       - roboshop-common
-      - roboshop-""{{ list }}
+      - roboshop-""{{ item }}
       region: us-east-1
     
     loop: "{{ instances }}"
