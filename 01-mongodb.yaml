@@ -1,0 +1,19 @@
+- name: configure mongodb server
+  hosts: mongodb
+  become: yes
+  tasks:
+  - name: copy mongo repo
+    copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
+  - name: install mongodc
+    package:
+      name: mongodb-org
+      state: present
+  
+  - name: enable and start service
+    service:
+      name: mongodb
+      state: started
+      enabled: yes
