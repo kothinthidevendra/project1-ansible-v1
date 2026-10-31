@@ -3,4 +3,9 @@
   become: yes
   tasks:
   - name: enabling nodejs module
-    command: 
+    command: dnf module enable nodejs:24 -y
+
+  - name: installing nodejs server
+    package:
+      name: nodejs
+      state: present
