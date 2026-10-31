@@ -1,11 +1,11 @@
-- name: create ec2 instance and r53 records
-  hosts: localhost
+- name: create ec2 instance and r53 record
+  hosts: local
   connection: local
   vars:
-    instances: ["mongodb", "redis", "mysql", "rabbitmq"]
-    action: create
+    instances: ["mongodb", "redis"]
     domain_name: joindevops.store
     img_id: ami-0055977a6e828a4f4
+    action: create
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
@@ -23,4 +23,5 @@
 
   - name: print ec2_output
     debug:
-      msg: "{{ ec2_output }}"
+      msg: "{{ ec2_outpput }}"
+  
